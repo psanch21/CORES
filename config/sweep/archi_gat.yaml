@@ -1,0 +1,7 @@
+graph_clf:
+  distribution: constant
+  value: gat
+graph_clf_kwargs.heads:
+  distribution: categorical
+  values: [1, 2, 4]
+    

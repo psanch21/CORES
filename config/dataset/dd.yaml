@@ -1,0 +1,5 @@
+data: dd
+data_kwargs:
+  balance: upsample
+loss: bce_logits
+metrics: clf_binary

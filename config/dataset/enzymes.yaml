@@ -1,0 +1,13 @@
+data: enzymes
+data_kwargs:
+  preprocessing_dict_x:
+    continuous:
+      transformer_list:
+      - {"type": "scaler", "name": "standard", "kwargs": {} }
+      columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 15, 16, 17]
+    identity:
+      transformer_list:
+      - {"type": "scaler", "name": "identity", "kwargs": {} }
+      columns: [18, 19, 20]
+loss: cross_entropy
+metrics: clf_multiclass

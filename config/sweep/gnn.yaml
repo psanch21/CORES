@@ -1,0 +1,51 @@
+method: bayes
+metric:
+  goal: maximize
+  name: valid/full__accuracy
+early_terminate:
+  type: hyperband
+  min_iter: 100
+  eta: 2.0
+parameters:
+  data_kwargs.splits:
+    distribution: categorical
+    values: [ [0.5, 0.4, 0.1],  [0.6, 0.3, 0.1],  [0.4, 0.5, 0.1]]
+  dataloader_kwargs.batch_size:
+    distribution: categorical
+    values: [32, 16]
+  early_stopping_kwargs.clf_kwargs.patience:
+    distribution: categorical
+    values: [500, 650, 800]
+  cores.gnn_mode:
+    distribution: constant  
+    value: True
+  graph_clf:
+    distribution: constant
+    value: gcn
+  graph_clf_kwargs.hidden_dim:
+    distribution: categorical
+    values: [16, 32, 64, 128]
+  graph_clf_kwargs.dropout:
+    distribution: categorical
+    values: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5]
+  graph_clf_kwargs.layers_gnn_num:
+    distribution: categorical
+    values: [1, 2, 3]
+  graph_clf_kwargs.pooling:
+    distribution: categorical
+    values: [[mean], [add], [mean, add]]
+  graph_clf_kwargs.has_bn:
+    distribution: categorical
+    values: [true, false]
+  lr_scheduler_kwargs_clf.factor:
+    distribution: categorical
+    values: [0.9, 0.95, 0.99]
+  lr_scheduler_kwargs_clf.patience:
+    distribution: constant
+    value: 10
+  optimizer_kwargs_clf.lr:
+    distribution: categorical
+    values: [0.0001, 0.0005, 0.001, 0.005, 0.01]
+  trainer.max_epochs:
+    distribution: constant
+    value: 1000 

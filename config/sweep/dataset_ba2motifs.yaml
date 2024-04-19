@@ -1,0 +1,22 @@
+data:
+  distribution: constant
+  value: ba2motifs
+data_kwargs.num_graphs:
+  distribution: constant
+  value: 200
+data_kwargs.num_motifs:
+  distribution: categorical
+  values: [1, 2]
+data_kwargs.ba_num_nodes:
+  distribution: constant
+  value: 8
+data_kwargs.ba_num_edges:
+  distribution: constant
+  value: 7
+loss:
+  distribution: constant
+  value: bce_logits
+metrics:
+  distribution: constant
+  value: clf_binary
+  

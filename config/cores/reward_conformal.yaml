@@ -1,0 +1,8 @@
+reward: cores_conformal
+reward_kwargs:
+  lambda_1: 0.5
+  alpha: 0.1
+  desired_ratio: 0.5
+  allow_worsen: False
+  k: 1.0
+  device: ${device}

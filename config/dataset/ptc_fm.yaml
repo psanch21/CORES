@@ -1,0 +1,5 @@
+data: ptc_fm
+data_kwargs:
+  balance: upsample
+loss: bce_logits
+metrics: clf_binary

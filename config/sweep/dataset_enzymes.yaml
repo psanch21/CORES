@@ -1,0 +1,23 @@
+data:
+  distribution: constant
+  value: enzymes
+data_kwargs.preprocessing_dict_x:
+  distribution: constant
+  value:
+    continuous:
+      transformer_list:
+      - {"type": "scaler", "name": "standard", "kwargs": {} }
+      columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 15, 16, 17]
+    identity:
+      transformer_list:
+      - {"type": "scaler", "name": "identity", "kwargs": {} }
+      columns: [18, 19, 20]
+dataloader_kwargs.batch_size:
+    distribution: categorical
+    values: [16, 32, 64, 128]
+loss:
+  distribution: constant
+  value: cross_entropy
+metrics:
+  distribution: constant
+  value: clf_multiclass

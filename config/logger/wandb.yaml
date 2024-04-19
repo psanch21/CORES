@@ -1,0 +1,6 @@
+logger: wandb
+logger_kwargs:
+  project: cores_test
+  enable: False
+  dir: ${root_folder}
+  resume: null

@@ -1,0 +1,15 @@
+data_kwargs.splits: [0.6, 0.3, 0.1]
+dataloader_kwargs.batch_size: 16
+early_stopping_kwargs.patience: 500
+graph_clf_kwargs.dropout: 0.1
+graph_clf_kwargs.has_bn: False
+graph_clf_kwargs.hidden_dim: 64
+graph_clf_kwargs.layers_gnn_num: 2
+graph_clf_kwargs.pooling: ['mean', 'add']
+lr_scheduler_kwargs.factor: 0.9
+model_kwargs.multiplier: 2.0
+model_kwargs.ratio: 0.4
+optimizer_kwargs.lr: 0.01
+data: mutag
+graph_clf: gcn
+top_k.use_gnn: ratio

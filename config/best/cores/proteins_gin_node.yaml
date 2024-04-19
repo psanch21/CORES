@@ -1,0 +1,19 @@
+data_kwargs.splits: [0.4, 0.5, 0.1]
+early_stopping_kwargs.ppo_kwargs.metric: training/ppo_loss___min
+early_stopping_kwargs.ppo_kwargs.patience: 5
+cores.env_steps: 64
+cores.ppo_steps: 5
+graph_env_kwargs.penalty_size: 1.5
+lr_scheduler_kwargs_rl.factor: 0.9
+optimizer_kwargs_rl.ratio_clf: 1.5
+optimizer_kwargs_rl.ratio_critic: 1.0
+ppo_kwargs.coeff_entropy: 0.001
+ppo_kwargs.coeff_mse: 3.0
+ppo_kwargs.eps_clip: 0.1
+reward_kwargs.alpha: 0.05
+reward_kwargs.desired_ratio: 0.2
+reward_kwargs.lambda_1: 0.0
+data: proteins
+graph_clf: gin
+cores.action_refers_to: node
+reward_kwargs.k: 1.0

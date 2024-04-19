@@ -1,0 +1,18 @@
+reward:
+  distribution: constant
+  value: cores_conformal
+reward_kwargs.lambda_1:
+  distribution: categorical
+  values: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+reward_kwargs.desired_ratio:
+  distribution: categorical
+  values: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+reward_kwargs.alpha:
+  distribution: categorical
+  values: [0.05, 0.1, 0.2]
+reward_kwargs.allow_worsen:
+  distribution: constant
+  value: True
+reward_kwargs.k:
+  distribution: categorical
+  values: [1.0, 5.0]

@@ -1,0 +1,3 @@
+data: mutag
+loss: bce_logits
+metrics: clf_binary

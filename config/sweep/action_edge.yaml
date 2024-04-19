@@ -1,0 +1,4 @@
+cores.action_refers_to:
+  distribution: constant
+  value: edge
+  

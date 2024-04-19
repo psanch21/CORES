@@ -1,0 +1,4 @@
+device: mps
+root_folder: results/test/cores
+data_kwargs:
+  root: ../Data

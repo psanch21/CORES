@@ -1,0 +1,16 @@
+data_kwargs.splits: [0.4, 0.5, 0.1]
+dataloader_kwargs.batch_size: 16
+early_stopping_kwargs.clf_kwargs.patience: 500
+graph_clf_kwargs.dropout: 0.1
+graph_clf_kwargs.has_bn: False
+graph_clf_kwargs.heads: 2
+graph_clf_kwargs.hidden_dim: 16
+graph_clf_kwargs.layers_gnn_num: 2
+graph_clf_kwargs.pooling: ['add']
+lr_scheduler_kwargs_clf.factor: 0.95
+lr_scheduler_kwargs_rl.factor: 0.95
+optimizer_kwargs_clf.lr: 0.005
+optimizer_kwargs_rl.lr_clf: 0.005
+data: proteins
+graph_clf: gat
+cores.gnn_mode: True

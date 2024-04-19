@@ -1,0 +1,14 @@
+data: proteins
+data_kwargs:
+  balance: upsample
+  preprocessing_dict_x:
+    continuous:
+      transformer_list:
+      - {"type": "scaler", "name": "standard", "kwargs": {} }
+      columns: [0]
+    identity:
+      transformer_list:
+      - {"type": "scaler", "name": "identity", "kwargs": {} }
+      columns: [1, 2, 3]
+loss: bce_logits
+metrics: clf_binary

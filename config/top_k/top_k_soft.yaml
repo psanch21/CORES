@@ -1,0 +1,8 @@
+model: top_k
+model_kwargs:
+  ratio: 0.99
+  min_score: null
+  multiplier: 1.0
+  k: 0.8
+  p: 0.1
+  use_gnn: True

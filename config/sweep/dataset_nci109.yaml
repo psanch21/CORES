@@ -1,0 +1,16 @@
+data:
+  distribution: constant
+  value: nci109
+data_kwargs.balance:
+  distribution: constant
+  value: upsample
+dataloader_kwargs.batch_size:
+    distribution: categorical
+    values: [16, 32, 64, 128]
+loss:
+  distribution: constant
+  value: bce_logits
+metrics:
+  distribution: constant
+  value: clf_binary
+  

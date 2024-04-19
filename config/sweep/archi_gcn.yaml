@@ -1,0 +1,4 @@
+graph_clf:
+  distribution: constant
+  value: gcn
+  

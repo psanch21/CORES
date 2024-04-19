@@ -1,0 +1,27 @@
+data:
+  distribution: constant
+  value: cox2
+data_kwargs.balance:
+  distribution: constant
+  value: upsample
+data_kwargs.preprocessing_dict_x:
+  distribution: constant
+  value:
+    continuous:
+      transformer_list:
+      - {"type": "scaler", "name": "standard", "kwargs": {} }
+      columns: [0, 1, 2]
+    identity:
+      transformer_list:
+      - {"type": "scaler", "name": "identity", "kwargs": {} }
+      columns: [3, 4, 5, 6, 7, 8, 9]
+dataloader_kwargs.batch_size:
+    distribution: categorical
+    values: [16, 32]
+loss:
+  distribution: constant
+  value: bce_logits
+metrics:
+  distribution: constant
+  value: clf_binary
+  

@@ -1,0 +1,80 @@
+root_folder: results/test/top_k
+seed: 0
+device: mps
+data: mutag
+data_kwargs:
+  root: ../Data
+  splits: [0.5, 0.4, 0.1]
+  k_fold: 2
+  shuffle_train: True
+  balance: None
+  single_split: None
+  preprocessing_dict_x:  {}
+  preprocessing_dict_y:  {}
+dataloader_kwargs:
+  batch_size: 16
+  num_workers: 0
+checkpoint: disabled
+checkpoint_kwargs:
+  filename: "model_{epoch}"
+  verbose: False
+  save_last: True
+  every_n_epochs: 1
+  save_weights_only: False
+early_stopping_kwargs:
+  metric: valid/loss
+  mode: min
+  min_delta: 0.0
+  patience: 15
+init_fn: xavier
+init_fn_kwargs:
+  nonlinearity: ${graph_clf_kwargs.activation}
+  param: null
+model: top_k
+model_kwargs:
+  ratio: 0.99
+  min_score: null
+  multiplier: 1.0
+  metric_objective:
+    name: valid/accuracy
+    mode: max
+  k: 0.8
+  p: 0.1
+  use_gnn: True
+graph_clf: gcn
+graph_clf_kwargs:
+  hidden_dim: 32
+  activation: relu
+  dropout: 0.1
+  has_bn: False
+  stage_type: skipsum
+  layers_pre_num: 1
+  layers_gnn_num: 2
+  layers_post_num: 1
+  pooling: [mean, add]
+  device: ${device}
+logger: dummy
+logger_kwargs:
+  enable: False
+metrics: clf_binary
+metrics_kwargs:
+  full_names: ["accuracy"]
+  device: ${device}
+lr_scheduler: plateau
+lr_scheduler_kwargs:
+  mode: ${model_kwargs.metric_objective.mode}
+  factor: 0.99
+  patience: 20
+  min_lr: 0.0001
+loss: bce_logits
+loss_kwargs:
+  reduction: mean
+optimizer: adam
+optimizer_kwargs:
+  lr: 0.001
+  weight_decay: 0.0001
+  betas: [0.9, 0.999]
+trainer:
+  max_epochs: 100
+  limit_val_batches: 1.0
+

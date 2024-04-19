@@ -1,0 +1,10 @@
+data:
+  distribution: constant
+  value: mutag
+loss:
+  distribution: constant
+  value: bce_logits
+metrics:
+  distribution: constant
+  value: clf_binary
+  

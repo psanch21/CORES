@@ -1,0 +1,15 @@
+method: random
+metric:
+  goal: maximize
+  name: valid/1__accuracy
+early_terminate:
+  type: hyperband
+  min_iter: 200
+  eta: 2.0
+parameters:
+  reward_kwargs.desired_ratio:
+    distribution: categorical
+    values: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+  reward_kwargs.lambda_1:
+    distribution: constant
+    value: 0.0 

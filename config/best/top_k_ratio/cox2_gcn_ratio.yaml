@@ -1,0 +1,15 @@
+data_kwargs.splits: [0.6, 0.3, 0.1]
+dataloader_kwargs.batch_size: 32
+early_stopping_kwargs.patience: 500
+graph_clf_kwargs.dropout: 0.0
+graph_clf_kwargs.has_bn: True
+graph_clf_kwargs.hidden_dim: 128
+graph_clf_kwargs.layers_gnn_num: 1
+graph_clf_kwargs.pooling: ['mean']
+lr_scheduler_kwargs.factor: 0.9
+model_kwargs.multiplier: 2.0
+model_kwargs.ratio: 0.9
+optimizer_kwargs.lr: 0.0005
+data: cox2
+graph_clf: gcn
+top_k.use_gnn: ratio

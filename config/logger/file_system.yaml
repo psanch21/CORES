@@ -1,0 +1,4 @@
+logger: file_system
+logger_kwargs:
+  enable: True
+  folder: ${root_folder}

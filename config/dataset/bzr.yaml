@@ -1,0 +1,14 @@
+data: bzr
+data_kwargs:
+  balance: upsample
+  preprocessing_dict_x:
+    continuous:
+      transformer_list:
+      - {"type": "scaler", "name": "standard", "kwargs": {} }
+      columns: [0, 1, 2]
+    identity:
+      transformer_list:
+      - {"type": "scaler", "name": "identity", "kwargs": {} }
+      columns: [3, 4, 5, 6, 7, 8, 9]
+loss: bce_logits
+metrics: clf_binary

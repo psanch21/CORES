@@ -1,0 +1,48 @@
+method: random
+metric:
+  goal: maximize
+  name: valid/1__accuracy
+early_terminate:
+  type: hyperband
+  min_iter: 200
+  eta: 2.0
+parameters:
+  data_kwargs.splits:
+    distribution: categorical
+    values: [ [0.5, 0.4, 0.1],  [0.6, 0.3, 0.1],  [0.4, 0.5, 0.1]]
+  early_stopping_kwargs.ppo_kwargs.metric:
+    distribution: categorical
+    values: [training/ppo_loss___min, training/ppo_rewards___max]
+  early_stopping_kwargs.ppo_kwargs.patience:
+    distribution: categorical
+    values: [5, 10, 15]
+  graph_env_kwargs.penalty_size:
+    distribution: categorical
+    values: [0.5, 1.0, 1.5]
+  cores.env_steps:
+    distribution: categorical  
+    values: [32, 64, 128]
+  cores.ppo_steps:
+    distribution: categorical  
+    values: [3, 5, 10, 15]
+  lr_scheduler_kwargs_rl.factor:
+    distribution: categorical
+    values: [0.9, 0.95, 0.99]
+  optimizer_kwargs_rl.ratio_clf:
+    distribution: categorical
+    values: [1.0, 1.5, 2.0, 2.5, 3.0]
+  optimizer_kwargs_rl.ratio_critic:
+    distribution: categorical
+    values: [1.0, 1.5, 2.0, 2.5, 3.0]
+  ppo_kwargs.eps_clip:
+    distribution: categorical
+    values: [0.1, 0.2, 0.3, 0.4]
+  ppo_kwargs.coeff_mse:
+    distribution: categorical
+    values: [0.1, 0.5, 1.0,2.0, 3.0, 5.0]
+  ppo_kwargs.coeff_entropy:
+    distribution: categorical
+    values: [0.0001, 0.001, 0.01]
+  trainer.max_epochs:
+    distribution: constant
+    value: 1000 

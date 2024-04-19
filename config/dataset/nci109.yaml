@@ -1,0 +1,5 @@
+data: nci109
+data_kwargs:
+  balance: upsample
+loss: bce_logits
+metrics: clf_binary

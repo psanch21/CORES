@@ -1,0 +1,7 @@
+cores.action_refers_to: edge
+cores.ppo_steps: 10
+logger_kwargs.enable: False
+reward: cores_conformal
+reward_kwargs.lambda_1: 1.0
+reward_kwargs.desired_ratio: 0.5
+reward_kwargs.alpha: 0.1

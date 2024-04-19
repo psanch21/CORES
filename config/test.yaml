@@ -1,0 +1,49 @@
+root_folder: results/test/gnn
+seed: 0
+data: mutag
+data_kwargs:
+  root: ../Data
+  splits: [0.8, 0.1, 0.1]
+  k_fold: 1
+  shuffle_train: True
+  balance: None
+  single_split: None
+  transformer_x: 
+    all:
+      transformer_list:
+        - {"type": "imputer", "name": "simple", "kwargs": {"strategy": "median"}}
+        - {"type": "scaler", "name": "standard", "kwargs": {}}
+      columns: "all"
+  transformer_y: 
+    all:
+      transformer_list:
+        - {"type": "imputer", "name": "simple", "kwargs": {"strategy": "median"}}
+        - {"type": "scaler", "name": "standard", "kwargs": {}}
+      columns: "all"
+model: gcn
+model_kwargs:
+  hideen_dim: 64
+dataloader_kwargs:
+  batch_size: 256
+logger: wandb
+logger_kwargs:
+  project_name: ppm_train
+  enable: True
+# logger: file_system
+# logger_kwargs:
+#   folder: dummy_folder
+optimizer: adam
+optimizer_kwargs:
+  lr: 0.005
+  weight_decay: 0.0001
+  betas: [0.9, 0.999]
+lr_scheduler: exponential
+lr_scheduler_kwargs:
+  gamma: 0.995
+loss: cross_entropy
+loss_kwargs:
+  reduction: mean
+trainer:
+  max_epochs: 500
+  limit_val_batches: 1.0
+

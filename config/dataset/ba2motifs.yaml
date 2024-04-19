@@ -1,0 +1,8 @@
+data: ba2motifs
+data_kwargs:
+  num_graphs: 200
+  num_motifs: 1
+  ba_num_nodes: 8
+  ba_num_edges: 7
+loss: bce_logits
+metrics: clf_binary

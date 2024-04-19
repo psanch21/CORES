@@ -1,0 +1,10 @@
+graph_clf:
+  distribution: constant
+  value: gin
+graph_clf_kwargs.eps:
+  distribution: categorical
+  values: [0.0, 0.1, 0.2, 0.3, 0.4]
+graph_clf_kwargs.train_eps:
+  distribution: categorical
+  values: [True, False]
+    

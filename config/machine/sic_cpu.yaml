@@ -1,0 +1,4 @@
+root_folder: /home/sanchez/cores/results/cores/sweeps/
+device: cpu
+data_kwargs:
+  root: /home/sanchez/Data

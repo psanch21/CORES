@@ -1,0 +1,17 @@
+data_kwargs.splits: [0.6, 0.3, 0.1]
+dataloader_kwargs.batch_size: 32
+early_stopping_kwargs.patience: 500
+graph_clf_kwargs.dropout: 0.0
+graph_clf_kwargs.has_bn: True
+graph_clf_kwargs.hidden_dim: 64
+graph_clf_kwargs.layers_gnn_num: 1
+graph_clf_kwargs.pooling: ['add']
+lr_scheduler_kwargs.factor: 0.95
+optimizer_kwargs.lr: 0.001
+top_k.multiplier: 0.5
+top_k.ratio: 0.3
+data: enzymes
+graph_clf: gin
+top_k.use_gnn: True
+graph_clf_kwargs.eps: 0.4
+graph_clf_kwargs.train_eps: True
